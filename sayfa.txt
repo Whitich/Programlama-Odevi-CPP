@@ -1,0 +1,89 @@
+
+@model List<EntityLayer.Concrete.CategoryListeleme>
+
+
+
+
+<head>
+
+
+
+    @*<link rel="stylesheet" type="text/css" href="/yanakayma/css/bootstrap.min.css">*@
+
+    @*<link rel="stylesheet" type="text/css" href="/yanakayma/css/font-awesome.css">*@
+
+    @*<link rel="stylesheet" type="text/css" href="/yanakayma/css/fullpage.min.css">*@
+
+
+    @*<link rel="stylesheet" href="/yanakayma/css/animate.css">*@
+    @*<link href="~/yanakayma/css/templatemo-style.css" rel="stylesheet" />*@
+
+    @*<link href="~/yanakayma/css/templatemo-style.css" rel="stylesheet" />*@
+
+    @*<link rel="stylesheet" href="/yanakayma/css/responsive.css">*@
+
+
+</head>
+
+<body>
+
+
+    <div class="section animated-row" data-section="slide06" style="font: 'Raleway', Arial, Helvetica, sans-serif; color: #fff; text-align: center; background: #222;">
+        <div class="section-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-8 wide-col-laptop">
+                    <div class="title-block animate" data-animate="fadeInUp">
+                        <span>Her Kategorinin Son Bloğu</span>
+                        @*<h2>what i’ve done?</h2>*@
+                    </div>
+                    <div class="gallery-section">
+                        <div class="gallery-list owl-carousel">
+
+                            @foreach (var item in Model)
+                            {
+
+                                <div class="item animate" data-animate="fadeInUp">
+
+                                    @*<div class="myButton" >*@
+                                    <div class="portfolio-item">
+                                        <div class="thumb image-container">
+                                            <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.BlogImage" alt=""></a>
+
+                                        </div>
+                                        <div class="thumb-inner animate" data-animate="fadeInUp">
+                                            <a href="/Blog/BlogDetails/@item.BlogID">
+                                                <h4>@item.BlogTitle</h4>
+                                                <p>@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <script src="/yanakayma/js/jquery.js"></script>
+
+    @*<script src="/yanakayma/js/bootstrap.min.js"></script>*@
+
+    @*<script src="/yanakayma/js/fullpage.min.js"></script>*@
+
+    @*<script src="/yanakayma/js/scrolloverflow.js"></script>*@
+
+    <script src="/yanakayma/js/owl.carousel.min.js"></script>
+
+    @*<script src="/yanakayma/js/jquery.inview.min.js"></script>*@
+
+    @*<script src="/yanakayma/js/form.js"></script>*@
+
+    <script src="/yanakayma/js/custom.js"></script>
+
+</body>
